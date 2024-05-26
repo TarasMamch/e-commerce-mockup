@@ -1,7 +1,15 @@
+import { useState, useEffect } from "react"
 import { SlBasket } from "react-icons/sl";
-import SearchBar from "./SearchBar"
+import TextBar from "./TextBar"
 
 function Header() {
+    const [searchInput, setSearchInput] = useState("")
+    const [submit, setSubmit] = useState(false)
+
+    useEffect(() => {
+        console.log(searchInput)
+    }, [submit])
+
     return (
         <div className="flex items-center justify-between border-b">
             <div className="flex items-center justify-between px-4 h-14 w-11/12">
@@ -10,7 +18,7 @@ function Header() {
                         E-Commerce mockup
                     </div>
                 </div>
-                <SearchBar placeholder="Search" />
+                <TextBar placeholder="Search" input={searchInput} setInput={setSearchInput} setSubmit={setSubmit} />
             </div>
             <div className="mr-10">
                 <button className="border border-black rounded py-1 px-3">
