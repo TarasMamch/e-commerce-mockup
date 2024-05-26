@@ -1,30 +1,22 @@
-import { SlBasket, SlMagnifier } from "react-icons/sl";
+import { SlBasket } from "react-icons/sl";
+import SearchBar from "./SearchBar"
 
 function Header() {
     return (
         <div className="flex items-center justify-between border-b">
             <div className="flex items-center justify-between px-4 h-14 w-11/12">
                 <div className="flex item-center space-x-2 text-sm">
-                    <div className="text-lg font-bold">
+                    <div className="text-lg font-bold cursor-pointer">
                         E-Commerce mockup
                     </div>
                 </div>
-                <div className="w-full max-w-xl ml-4">
-                    <form>
-                        <div className="relative">
-                            <div className="absolute inset-y-0 flex items-center pl-3">
-                                <SlMagnifier className="h-5 w-5 text-gray-500" />
-                            </div>
-                            <input
-                                className="pl-10 py-2 w-full border-0 shadow-none"
-                                placeholder="Search"
-                            />
-                        </div>
-                    </form>
-                </div>
+                <SearchBar placeholder="Search" />
             </div>
             <div className="mr-10">
-                <SlBasket />
+                <button className="border border-black rounded py-1 px-3">
+                    Login
+                </button>
+                {/* <SlBasket /> */}
             </div>
         </div>
 

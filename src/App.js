@@ -1,11 +1,13 @@
 import Header from "./components/Header"
-import Home from "./pages/Home"
+import HomePage from "./pages/HomePage"
+import LoginPage from "./pages/LoginPage"
 
 function App() {
     return (
         <div>
             <Header />
-            <Home />
+            {/* <HomePage /> */}
+            <LoginPage />
         </div>
     )
 }
