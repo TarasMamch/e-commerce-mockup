@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react"
 import { SlBasket } from "react-icons/sl";
 import TextBar from "./TextBar"
+import Button from "./Button";
 
 function Header() {
     const [searchInput, setSearchInput] = useState("")
     const [submit, setSubmit] = useState(false)
 
     useEffect(() => {
-        console.log(searchInput)
+        // console.log(searchInput)
     }, [submit])
 
     return (
@@ -21,9 +22,7 @@ function Header() {
                 <TextBar placeholder="Search" input={searchInput} setInput={setSearchInput} setSubmit={setSubmit} />
             </div>
             <div className="mr-10">
-                <button className="border border-black rounded py-1 px-3">
-                    Login
-                </button>
+                <Button>Login</Button>
                 {/* <SlBasket /> */}
             </div>
         </div>

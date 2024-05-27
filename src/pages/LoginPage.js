@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import TextBar from "../components/TextBar"
+import Button from "../components/Button"
 
 function LoginPage() {
     const [usernameInput, setUsernameInput] = useState("")
@@ -7,7 +8,9 @@ function LoginPage() {
     const [submit, setSubmit] = useState(false)
 
     useEffect(() => {
-        console.log(usernameInput, passwordInput)
+        if (usernameInput.length > 0 & passwordInput.length > 0) {
+            console.log("test")
+        }
     }, [submit])
 
     return (
@@ -18,6 +21,7 @@ function LoginPage() {
                 </div>
                 <TextBar placeholder="Username" input={usernameInput} setInput={setUsernameInput} setSubmit={setSubmit} />
                 <TextBar placeholder="Password" input={passwordInput} setInput={setPasswordInput} setSubmit={setSubmit} />
+                <Button>Login</Button>
             </div>
         </div>
     )
