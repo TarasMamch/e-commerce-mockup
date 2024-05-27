@@ -4,6 +4,9 @@ import Header from "./components/Header"
 import HomePage from "./pages/HomePage"
 import LoginPage from "./pages/LoginPage"
 import Signup from "./pages/SignupPage"
+import ProductPage from "./pages/ProductPage"
+import CartPage from "./pages/CartPage"
+import CheckoutPage from "./pages/CheckoutPage"
 
 function App() {
     const router = createBrowserRouter([
@@ -18,6 +21,18 @@ function App() {
         {
             path: "/signup",
             element: <Signup />
+        },
+        {
+            path: "/product:id",
+            element: <ProductPage />
+        },
+        {
+            path: "/cartPage",
+            element: <CartPage />
+        },
+        {
+            path: "/checkout",
+            element: <CheckoutPage />
         }
     ])
 

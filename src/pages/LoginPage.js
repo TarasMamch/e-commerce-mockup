@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import TextBar from "../components/TextBar"
 import Button from "../components/Button"
 import { Link } from "react-router-dom"
@@ -8,11 +8,9 @@ function LoginPage() {
     const [passwordInput, setPasswordInput] = useState("")
     const [submit, setSubmit] = useState(false)
 
-    useEffect(() => {
-        // if (usernameInput.length > 0 & passwordInput.length > 0) {
-        //     console.log("test")
-        // }
-    }, [submit])
+    if (submit) {
+        console.log(submit)
+    }
 
     return (
         <div className="relative">
