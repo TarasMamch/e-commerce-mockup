@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { SlBasket } from "react-icons/sl";
 import TextBar from "./TextBar"
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [searchInput, setSearchInput] = useState("")
@@ -16,13 +17,15 @@ function Header() {
             <div className="flex items-center justify-between px-4 h-14 w-11/12">
                 <div className="flex item-center space-x-2 text-sm">
                     <div className="text-lg font-bold cursor-pointer">
-                        E-Commerce mockup
+                        <Link to="/">E-Commerce mockup</Link>
                     </div>
                 </div>
                 <TextBar placeholder="Search" input={searchInput} setInput={setSearchInput} setSubmit={setSubmit} />
             </div>
             <div className="mr-10">
-                <Button>Login</Button>
+                <Link to="/login">
+                    <Button>Login</Button>
+                </Link>
                 {/* <SlBasket /> */}
             </div>
         </div>
