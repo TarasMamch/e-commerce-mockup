@@ -1,5 +1,3 @@
-import { SlMagnifier } from "react-icons/sl"
-
 function TextBar({ placeholder, input, setInput, setSubmit }) {
 
     const handleSubmit = (event) => {
