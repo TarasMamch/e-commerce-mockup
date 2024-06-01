@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require("cors")
+const routes = require('./routes')
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
@@ -7,7 +8,7 @@ const sequelize = require('./config/connection')
 const SequelizeStore = require("connect-session-sequelize")(session.Store)
 
 const app = express()
-const port = 5000
+const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(
@@ -21,10 +22,22 @@ app.use(
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get("/", (req, res) => {
-    res.send("Hello World")
-})
+const sess = {
+    secret: "super secret",
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 2,
+    },
+    resave: false,
+    saveUninitialized: true,
+    Store: new SequelizeStore({
+        db: sequelize
+    })
+}
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.use(session(sess))
+
+app.use(routes)
+
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
 })
