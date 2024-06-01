@@ -6,23 +6,28 @@ function HomePage() {
     const [responseData, setResponseData] = useState([])
 
     const getData = async () => {
-        const response = await axios("http://localhost:5000/api/products")
+        const response = await axios.get("http://localhost:5000/api/products")
         const data = response.data
+        console.log(data)
         setResponseData(data)
-        console.log(responseData)
     }
 
     useEffect(() => {
         getData()
     }, [])
 
+    const seasons = ["Spring", "Summer", "Autumn", "Winter"];
+
     return (
         <div>
-            {responseData.map((data) => {
-                <ItemPanel key={data.id} image={data.image} name={data.name} price={data.price} />
-            })}
+            <h2>Seasons of the year</h2>
+            <ul>
+                {responseData.map((data) => (
+                    <ItemPanel key={data.id} name={data.name} price={data.price} image={data.image}></ItemPanel>
+                ))}
+            </ul>
         </div>
-    )
+    );
 }
 
 export default HomePage
