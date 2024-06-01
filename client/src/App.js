@@ -3,7 +3,7 @@ import { useState } from "react"
 import Header from "./components/Header"
 
 function App() {
-    const [loginStatus, setLoginStatus] = useState("");
+    const [loginStatus, setLoginStatus] = useState(false);
 
     return (
         <>

@@ -11,10 +11,7 @@ function SignupPage() {
     const [submit, setSubmit] = useState(false)
     let navigate = useNavigate()
 
-
     useEffect(() => {
-        console.log(usernameInput, emailInput, passwordInput)
-        console.log(submit)
         if (submit) {
             axios.post("http://localhost:5000/api/users", {
                 username: usernameInput,
