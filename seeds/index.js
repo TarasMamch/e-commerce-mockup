@@ -4,6 +4,7 @@ const { User, Product } = require("../models")
 const users = [
     {
         username: "Lorem",
+        email: "lorem@gmail.com",
         password: "password"
     }
 ]

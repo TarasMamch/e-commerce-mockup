@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom"
+import { useState } from "react"
 import Header from "./components/Header"
-import axios from "axios";
-import { useEffect } from "react";
 
 function App() {
+    const [loginStatus, setLoginStatus] = useState("");
+
     return (
         <>
             <Header />
-            <Outlet />
+            <Outlet loginStatus={loginStatus} setLoginStatus={setLoginStatus} />
         </>
     )
 }
