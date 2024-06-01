@@ -16,7 +16,7 @@ User.init({
         validate: {
             len: [8, 100]
         }
-    }
+    },
 }, {
     sequelize,
     hooks: {
