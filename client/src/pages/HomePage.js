@@ -3,19 +3,24 @@ import axios from "axios"
 import ItemPanel from "../components/ItemPanel"
 
 function HomePage() {
-    const [responseData, setResponseData] = useState('')
+    const [responseData, setResponseData] = useState([])
+
+    const getData = async () => {
+        const response = await axios("http://localhost:5000/api/products")
+        const data = response.data
+        setResponseData(data)
+        console.log(responseData)
+    }
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/products")
-            .then((response) => {
-                setResponseData(response.data[0])
-            })
+        getData()
     }, [])
 
     return (
         <div>
-            {/* <EmblaCarousel /> */}
-            <ItemPanel image={responseData.image} name={responseData.name} price={responseData.price} />
+            {responseData.map((data) => {
+                <ItemPanel key={data.id} image={data.image} name={data.name} price={data.price} />
+            })}
         </div>
     )
 }
