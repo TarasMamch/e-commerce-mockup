@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import TextBar from "../components/TextBar"
 import Button from "../components/Button"
+import LoginContainer from "../components/LoginContainer"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 
@@ -18,7 +19,7 @@ function SignupPage() {
                 email: emailInput,
                 password: passwordInput
             }).then((response) => {
-                navigate("/")
+                navigate("/login")
             })
         }
     }, [submit])
@@ -28,18 +29,13 @@ function SignupPage() {
     }
 
     return (
-        <div className="relative">
-            <div className="w-96 p-5 bg-cyan-200 absolute">
-                <div className="flex flex-col items-center">
-                    <p>Create Account</p>
-                </div>
-                <TextBar placeholder="Username" input={usernameInput} setInput={setUsernameInput} />
-                <TextBar placeholder="Email" input={emailInput} setInput={setEmailInput} />
-                <TextBar placeholder="Password" input={passwordInput} setInput={setPasswordInput} setSubmit={setSubmit} />
-                <Button handleClick={handleClick}>Sign Up</Button>
-                <Link to="/login">Login instead</Link>
-            </div>
-        </div>
+        <LoginContainer text={"Signup"}>
+            <TextBar placeholder="Username" input={usernameInput} setInput={setUsernameInput} />
+            <TextBar placeholder="Email" input={emailInput} setInput={setEmailInput} />
+            <TextBar placeholder="Password" input={passwordInput} setInput={setPasswordInput} setSubmit={setSubmit} />
+            <Button handleClick={handleClick}>Sign Up</Button>
+            <Link to="/login">Login instead</Link>
+        </LoginContainer>
     )
 }
 

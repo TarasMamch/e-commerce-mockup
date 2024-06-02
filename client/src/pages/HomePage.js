@@ -8,7 +8,6 @@ function HomePage() {
     const getData = async () => {
         const response = await axios.get("http://localhost:5000/api/products")
         const data = response.data
-        console.log(data)
         setResponseData(data)
     }
 
