@@ -16,16 +16,11 @@ function HomePage() {
         getData()
     }, [])
 
-    const seasons = ["Spring", "Summer", "Autumn", "Winter"];
-
     return (
         <div>
-            <h2>Seasons of the year</h2>
-            <ul>
-                {responseData.map((data) => (
-                    <ItemPanel key={data.id} name={data.name} price={data.price} image={data.image}></ItemPanel>
-                ))}
-            </ul>
+            {responseData.map((data) => (
+                <ItemPanel key={data.id} name={data.name} price={data.price} image={data.image} />
+            ))}
         </div>
     );
 }
