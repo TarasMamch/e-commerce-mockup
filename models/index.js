@@ -6,5 +6,6 @@ User.hasMany(UserProduct)
 
 module.exports = {
     User,
-    Product
+    Product,
+    UserProduct
 }

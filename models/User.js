@@ -29,7 +29,8 @@ User.init({
             userObj.password = bcrypt.hashSync(userObj.password, 4);
             return userObj;
         }
-    }
+    },
+    freezeTableName: true
 });
 
 module.exports = User
