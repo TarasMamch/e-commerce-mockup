@@ -11,4 +11,13 @@ router.get("/", async (req, res) => {
     }
 })
 
+router.get("/:id", async (req, res) => {
+    try {
+        const data = await Product.findByPk(req.params.id)
+        res.json(data)
+    } catch (err) {
+        res.status(500).json({ msg: "ERROR", err })
+    }
+})
+
 module.exports = router

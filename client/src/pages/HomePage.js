@@ -18,7 +18,7 @@ function HomePage() {
     return (
         <div>
             {responseData.map((data) => (
-                <ItemPanel key={data.id} name={data.name} price={data.price} image={data.image} />
+                <ItemPanel key={data.id} id={data.id} name={data.name} price={data.price} image={data.image} />
             ))}
         </div>
     );
