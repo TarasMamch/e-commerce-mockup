@@ -16,7 +16,7 @@ router.post("/", (req, res) => {
         name: req.body.name,
         price: req.body.price,
         image: req.body.image,
-        userId: req.body.userId
+        UserId: req.body.UserId
     }).then(data => {
         res.json(data)
     }).catch(err => {
