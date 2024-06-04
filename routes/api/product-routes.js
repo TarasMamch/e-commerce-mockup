@@ -4,7 +4,9 @@ const { Product, Image } = require("../../models")
 
 router.get("/", async (req, res) => {
     try {
-        const data = await Product.findAll()
+        const data = await Product.findAll({
+            include: [Image]
+        })
         res.json(data)
     } catch (err) {
         res.status(500).json({ msg: "ERROR", err })

@@ -14,10 +14,7 @@ Product.init({
     },
     price: {
         type: DataTypes.STRING,
-    },
-    image: {
-        type: DataTypes.STRING,
-    },
+    }
 }, {
     sequelize,
     timestamps: false,

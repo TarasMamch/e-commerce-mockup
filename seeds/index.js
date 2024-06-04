@@ -14,19 +14,16 @@ const products = [
         id: 1,
         name: "Nintendo Switch",
         price: "349.99",
-        image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6470/6470924_sd.jpg;maxHeight=2000;maxWidth=2000",
     },
     {
         id: 2,
         name: "Sony Playstation 5",
         price: "499.99",
-        image: "https://media.gamestop.com/i/gamestop/11108140_ALT01?$pdp$",
     },
     {
         id: 3,
         name: "Microsoft Xbox Series X",
         price: "499.99",
-        image: "https://i5.walmartimages.com/asr/9f8c06f5-7953-426d-9b68-ab914839cef4.5f15be430800ce4d7c3bb5694d4ab798.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
     }
 ]
 
@@ -41,7 +38,7 @@ const images = [
     },
     {
         image: "https://i5.walmartimages.com/asr/9f8c06f5-7953-426d-9b68-ab914839cef4.5f15be430800ce4d7c3bb5694d4ab798.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-        ProductId: 2
+        ProductId: 3
     }
 ]
 
