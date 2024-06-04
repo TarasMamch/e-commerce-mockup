@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import EmblaCarousel from "../components/carousel/EmblaCarousel"
 
 function ProductPage() {
     const [responseData, setResponseData] = useState([])
@@ -14,16 +15,14 @@ function ProductPage() {
         getData()
     }, [])
 
+    const OPTIONS = {}
+    const SLIDE_COUNT = 5
+    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
     return (
-        <div className="flex m-6">
-            <div>
-                <img src={responseData.image} className="h-20" />
-                <img src={responseData.image} className="h-20" />
-                <img src={responseData.image} className="h-20" />
-                <img src={responseData.image} className="h-20" />
-            </div>
-            <img src={responseData.image} className="h-96 border border-solid border-2 rounded" />
-        </div>
+        <div>
+            <EmblaCarousel slides={SLIDES} opttions={OPTIONS} />
+        </div >
     )
 }
 

@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Product } = require("../models")
+const { User, Product, Image } = require("../models")
 
 const users = [
     {
@@ -30,11 +30,16 @@ const products = [
     }
 ]
 
+const images = [
+
+]
+
 const seedAll = async () => {
     await sequelize.sync({ force: true })
     console.log('\n----- DATABASE SYNCED -----\n')
     await User.bulkCreate(users, { individualHooks: true })
     await Product.bulkCreate(products)
+    await Image.bulkCreate(images)
     console.log('\n----- ALL IS DONE, EXITING -----\n')
 
     process.exit(0);
