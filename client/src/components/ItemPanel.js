@@ -19,9 +19,11 @@ function ItemPanel({ id, name, price, image }) {
         <div className="border h-80 w-4/5 m-3 flex">
             <img src={image} className="cursor-pointer" />
             <div className="flex flex-col ml-5 mt-5 relative">
-                <Link to="/product">
-                    <p className="font-bold text-4xl mb-10 cursor-pointer">{name}</p>
-                    <p className="text-xl cursor-pointer">${price}</p>
+                <Link to={`/product/${id}`}>
+                    <div>
+                        <p className="font-bold text-4xl mb-10 cursor-pointer">{name}</p>
+                        <p className="text-xl cursor-pointer">${price}</p>
+                    </div>
                 </Link>
                 <div className="flex absolute bottom-5 left-0">
                     <Button handleClick={handleButtonClick}>Add to Cart</Button>

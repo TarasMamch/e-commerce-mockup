@@ -9,6 +9,7 @@ import Signup from "./pages/SignupPage"
 import ProductPage from "./pages/ProductPage"
 import CartPage from "./pages/CartPage"
 import CheckoutPage from "./pages/CheckoutPage"
+import productLoader from "./loaders/productLoader";
 
 const el = document.getElementById('root')
 const root = createRoot(el)
@@ -31,8 +32,9 @@ const router = createBrowserRouter([
                 element: <Signup />
             },
             {
-                path: "/product",
-                element: <ProductPage />
+                path: "/product/:id",
+                element: <ProductPage />,
+                loader: productLoader
             },
             {
                 path: "/cartPage",
