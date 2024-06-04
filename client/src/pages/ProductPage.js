@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom"
 import EmblaCarousel from "../components/carousel/EmblaCarousel"
 
 function ProductPage() {
-    const { productData, imageData } = useLoaderData()
+    const { productData } = useLoaderData()
 
     const OPTIONS = {}
     const SLIDE_COUNT = 6

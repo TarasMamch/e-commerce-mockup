@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Product } = require("../../models")
+const { Product, Image } = require("../../models")
 
 router.get("/", async (req, res) => {
     try {
@@ -13,7 +13,9 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
     try {
-        const data = await Product.findByPk(req.params.id)
+        const data = await Product.findByPk(req.params.id, {
+            include: [Image]
+        })
         res.json(data)
     } catch (err) {
         res.status(500).json({ msg: "ERROR", err })

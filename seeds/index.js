@@ -41,7 +41,7 @@ const images = [
     },
     {
         image: "https://i5.walmartimages.com/asr/9f8c06f5-7953-426d-9b68-ab914839cef4.5f15be430800ce4d7c3bb5694d4ab798.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-        ProductId: 3
+        ProductId: 2
     }
 ]
 

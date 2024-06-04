@@ -10,15 +10,9 @@ async function productLoader({ params }) {
         return response.data
     }
 
-    const getImageData = async () => {
-        const response = await axios.get(`http://localhost:5000/api/images/${params.id}`)
-        return response.data
-    }
-
     const productData = await getProductData()
-    const imageData = await getImageData()
 
-    return { productData, imageData }
+    return { productData }
 }
 
 export default productLoader
