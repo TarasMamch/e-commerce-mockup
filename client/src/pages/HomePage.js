@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
 import ItemPanel from "../components/ItemPanel"
+import { useLoaderData } from "react-router-dom"
 
 function HomePage() {
-    const [responseData, setResponseData] = useState([])
-
-    const getData = async () => {
-        const response = await axios.get("http://localhost:5000/api/products")
-        const data = response.data
-        setResponseData(data)
-    }
-
-    useEffect(() => {
-        getData()
-    }, [])
+    const { data } = useLoaderData()
 
     return (
         <div>
-            {responseData.map((data) => (
-                <ItemPanel key={data.id} id={data.id} name={data.name} price={data.price} image={data.image} />
+            {data.map((p) => (
+                <ItemPanel key={p.id} id={p.id} name={p.name} price={p.price} image={p.image} />
             ))}
         </div>
     );

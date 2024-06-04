@@ -10,6 +10,7 @@ import ProductPage from "./pages/ProductPage"
 import CartPage from "./pages/CartPage"
 import CheckoutPage from "./pages/CheckoutPage"
 import productLoader from "./loaders/productLoader";
+import homeLoader from "./loaders/homeLoader";
 
 const el = document.getElementById('root')
 const root = createRoot(el)
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <HomePage />
+                element: <HomePage />,
+                loader: homeLoader
             },
             {
                 path: "/login",

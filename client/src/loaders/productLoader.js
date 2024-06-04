@@ -7,8 +7,7 @@ async function productLoader({ params }) {
 
     const getData = async (id) => {
         const response = await axios.get(`http://localhost:5000/api/products/${params.id}`)
-
-        return response
+        return response.data
     }
 
     const data = await getData()
