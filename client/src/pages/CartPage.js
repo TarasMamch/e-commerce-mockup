@@ -1,12 +1,14 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate, Link } from "react-router-dom"
 import Button from "../components/Button"
 import axios from "axios"
 
 function CartPage() {
     const { data } = useLoaderData()
+    const navigate = useNavigate()
 
     const handleDelete = async (id) => {
-        const response = await axios.delete(`http://localhost:5000/api/user_products/${id}`)
+        await axios.delete(`http://localhost:5000/api/user_products/${id}`)
+        navigate(0)
     }
 
     return (
@@ -25,9 +27,11 @@ function CartPage() {
                     </div>
                 )
             })}
-            <Button>
-                Proceed to Checkout
-            </Button>
+            <Link to="/checkout">
+                <Button>
+                    Proceed to Checkout
+                </Button>
+            </Link>
         </div>
     )
 }
