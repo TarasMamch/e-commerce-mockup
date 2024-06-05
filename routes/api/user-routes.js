@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const { User } = require("../../models")
+const { User, UserProduct } = require("../../models")
 
 router.get("/", async (req, res) => {
     try {
@@ -11,6 +11,18 @@ router.get("/", async (req, res) => {
         res.status(500).json({ msg: "ERROR", err })
     }
 })
+
+router.get("/:id", async (req, res) => {
+    try {
+        const data = await User.findByPk(req.params.id, {
+            include: [UserProduct]
+        })
+        res.json(data)
+    } catch (err) {
+        res.status(500).json({ msg: "ERROR", err })
+    }
+})
+
 
 router.post("/", (req, res) => {
     User.create({

@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage"
 import CheckoutPage from "./pages/CheckoutPage"
 import productLoader from "./loaders/productLoader";
 import homeLoader from "./loaders/homeLoader";
+import cartLoader from "./loaders/cartLoader";
 
 const el = document.getElementById('root')
 const root = createRoot(el)
@@ -39,8 +40,9 @@ const router = createBrowserRouter([
                 loader: productLoader
             },
             {
-                path: "/cartPage",
-                element: <CartPage />
+                path: "/cart",
+                element: <CartPage />,
+                loader: cartLoader
             },
             {
                 path: "/checkout",
